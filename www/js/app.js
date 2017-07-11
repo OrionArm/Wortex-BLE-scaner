@@ -30,7 +30,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         },
         function (obj) {
           //Handle successes
-          console.log('Handle successes: ' + obj);
         }
       );
     });
