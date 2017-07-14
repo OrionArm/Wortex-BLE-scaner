@@ -1,0 +1,25 @@
+
+<ion-view view-title="Wortex Bluetooth LE scanner" name="dash">
+
+  <ion-content padding="false"  class="has-header">
+
+    <ion-list id="device-list" class="top-container">
+
+          <ion-item ng-repeat="device in data">
+              <h2>{{ device.Name }}</h2>
+              <p>UUID: {{ device.UUID }}</p>
+              <p>RSSI: {{ device.RSSI }}</p>
+				    <div class="loader" style="width: {{device.RSSI}}%;">
+					    <p class="percent">{{device.RSSI}}%</p>
+				    </div>
+          </ion-item>
+    </ion-list>
+
+  </ion-content>
+  <div class="button-bar">
+    <button id="scan-start" on-tap="scanStart()" class="button button-large round button-balanced">Start</button>
+    <button id="scan-stop" on-tap="scanStop()" class="button button-large round button-assertive" >Stop</button>
+  </div>
+</ion-view>
+
+

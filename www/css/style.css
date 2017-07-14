@@ -10,3 +10,13 @@
 		color:white !important;
 		text-align:center;
 	}
+
+.top-container {
+  height: calc(100% - 96px);
+  overflow: scroll;
+}
+
+.button-bar {
+  position: fixed;
+  bottom: -3px;
+}

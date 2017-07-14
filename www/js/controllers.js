@@ -3,12 +3,19 @@ angular.module('starter.controllers', [])
   .controller('DashCtrl', ['$scope', '$cordovaBluetoothLE', '$ionicPlatform', '$timeout', function (
      $scope, $cordovaBluetoothLE, $ionicPlatform, $timeout) {
     // $scope.progressPercent = 0;
+    $ionicPlatform.ready(function () {
+    $scope.scanStart();
+    });
+
     $scope.data = [
       {'Name':'sony xperia z1', 'UUID': 123456, 'RSSI': 40},
       {'Name':'Iphone', 'UUID': 123456, 'RSSI': 20},
       {'Name':'sony xperia z3', 'UUID': 123456, 'RSSI': 100},
-      // {'Name':'Iphone 2', 'UUID': 123456, 'RSSI': 100},
-      // {'Name':'Samsung', 'UUID': 123456, 'RSSI': 100}
+      {'Name':'Iphone 2', 'UUID': 123456, 'RSSI': 100},
+      {'Name':'Samsung', 'UUID': 123456, 'RSSI': 100},
+      {'Name':'Nokia', 'UUID': 123456, 'RSSI': 100},
+      {'Name':'Vasia', 'UUID': 123456, 'RSSI': 100},
+
     ];
     $scope.foundDevices = [];
 
@@ -95,29 +102,5 @@ angular.module('starter.controllers', [])
   }])
 
 
-  .controller('ChatsCtrl', function ($scope, Chats) {
-    // With the new view caching in Ionic, Controllers are only called
-    // when they are recreated or on app start, instead of every page change.
-    // To listen for when this page is active (for example, to refresh data),
-    // listen for the $ionicView.enter event:
-    //
-    //$scope.$on('$ionicView.enter', function(e) {
-    //});
-
-    $scope.chats = Chats.all();
-    $scope.remove = function (chat) {
-      Chats.remove(chat);
-    };
-  })
 
 
-  .controller('ChatDetailCtrl', function ($scope, $stateParams, Chats) {
-    $scope.chat = Chats.get($stateParams.chatId);
-  })
-
-
-  .controller('AccountCtrl', function ($scope) {
-    $scope.settings = {
-      enableFriends: true
-    };
-  });
