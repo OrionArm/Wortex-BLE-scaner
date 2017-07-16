@@ -1,7 +1,10 @@
 {
-    "name": "bluetooth wortex",
+    "name": "bluetooth_wortex",
     "version": "0.0.1",
     "description": "bluetooth le scaner",
+    "scripts": {
+        "serve": "lite-server"
+    },
     "dependencies": {
         "cordova-android": "^6.2.3",
         "cordova-ios": "^4.4.0",
@@ -25,6 +28,7 @@
         "@ionic/cli-plugin-ionic1": "2.0.1",
         "bower": "^1.3.3",
         "gulp-util": "^2.2.14",
+        "lite-server": "2.3.0",
         "shelljs": "^0.3.0"
     },
     "cordova": {

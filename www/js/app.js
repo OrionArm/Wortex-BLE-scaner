@@ -1,12 +1,12 @@
-// Ionic Starter App
+// Ionic bluetooth_wortex App
 
 // angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
+// 'bluetooth_wortex' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-// 'starter.services' is found in services.js
-// 'starter.controllers' is found in controllers.js
-angular.module('bluetooth_wortex', ['ionic', 'starter.controllers',
-                           'starter.services','ngCordovaBluetoothLE'])
+// 'bluetooth_wortex.services' is found in services.js
+// 'bluetooth_wortex.controllers' is found in controllers.js
+angular.module('bluetooth_wortex', ['ionic', 'bluetooth_wortex.controllers',
+  'bluetooth_wortex.services', 'ngCordovaBluetoothLE'])
 
   .run(function ($ionicPlatform, $cordovaBluetoothLE) {
     $ionicPlatform.ready(function () {
@@ -21,9 +21,8 @@ angular.module('bluetooth_wortex', ['ionic', 'starter.controllers',
         // org.apache.cordova.statusbar required
         StatusBar.styleDefault();
       }
-
-      $cordovaBluetoothLE.initialize({request: true}).then(function (data) {
-          console.log('BLE initialized successfully: ' + obj);
+      $cordovaBluetoothLE.initialize({request: true}).then(function (obj) {
+          console.log('BLE initialized successfully: ');
         },
         function (obj) {
           //Handle errors
