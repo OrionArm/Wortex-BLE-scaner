@@ -13,7 +13,8 @@ angular.module('bluetooth_wortex.controllers', [])
         $scope.scanStop();
       };
 
-      $scope.foundDevices = new Object;
+      $scope.foundDevices = new Object; // it is use if you need create device DB
+      $scope.currentDevices = new Object;
       $scope.showResults = false;
       $scope.showError = false;
 
@@ -109,20 +110,24 @@ angular.module('bluetooth_wortex.controllers', [])
       };
 
       var checkDevice = function (device) {
-        device.timeMark = new Date();
-        if (device.address in $scope.foundDevices) {
-          console.debug("It is not a new devise");
-          $scope.foundDevices[device.address].push(device);
-        } else {
-          console.debug("It is a new devise!!!!");
-          $scope.foundDevices[device.address] = [];
-          $scope.foundDevices[device.address].push(device);
-        }
+        // Create Database devices
+        // device.timeMark = new Date();
+        // if (device.address in $scope.foundDevices) {
+        //   console.debug("It is not a new devise");
+        //   $scope.foundDevices[device.address].push(device);
+        // } else {
+        //   console.debug("It is a new devise!!!!");
+        //   $scope.foundDevices[device.address] = [];
+        //   $scope.foundDevices[device.address].push(device);
+        // }
 
-        console.log($scope.foundDevices);
+        device.timeMark = new Date();
+        $scope.currentDevices[device.address] = device;
+
       };
 
     }]);
+
 
 
 

@@ -9,6 +9,7 @@
 		text-align:center;
 		color:white !important;
 		text-align:center;
+    margin-top: 15px;
 	}
 
 .top-container {
@@ -19,4 +20,47 @@
 .button-bar {
   position: fixed;
   bottom: -3px;
+}
+/*#device-param > li{*/
+  /*margin: 40px;*/
+/*}*/
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.graph .axis {
+  stroke-width: 1;
+}
+
+.graph .axis .tick line {
+  stroke: black;
+}
+
+.graph .axis .tick text {
+  fill: black;
+  font-size: 0.7em;
+}
+
+.graph .axis .domain {
+  fill: none;
+  stroke: black;
+}
+
+.graph .group {
+  fill: none;
+  stroke: black;
+  stroke-width: 1.5;
+}
+
+.area {
+  fill: url(#blue-gradient);
+  stroke-width: 05px;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
 }

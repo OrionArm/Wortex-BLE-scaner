@@ -5,8 +5,8 @@
 // the 2nd parameter is an array of 'requires'
 // 'bluetooth_wortex.services' is found in services.js
 // 'bluetooth_wortex.controllers' is found in controllers.js
-angular.module('bluetooth_wortex', ['ionic', 'bluetooth_wortex.controllers',
-  'bluetooth_wortex.services', 'ngCordovaBluetoothLE'])
+angular.module('bluetooth_wortex', ['ionic', 'ngCordovaBluetoothLE', 'bluetooth_wortex.controllers',
+  'bluetooth_wortex.services','bluetooth_wortex.directives' ])
 
   .run(function ($ionicPlatform, $cordovaBluetoothLE) {
     $ionicPlatform.ready(function () {

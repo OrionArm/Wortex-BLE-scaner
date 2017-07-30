@@ -116,7 +116,7 @@ angular.module('ngCordovaBluetoothLE', [])
         var device = BLE_DEVICE[Math.round(Math.random())];
         device.rssi = Math.round(80 * Math.random() - 110);
         q.notify(device);
-      }, 500)
+      }, 250)
 
       return q.promise;
     };

@@ -2,20 +2,19 @@
 <ion-view view-title="Wortex Bluetooth LE scanner" name="dash" >
 
   <ion-content padding="false"  class="has-header">
-
+    <div ng-show="showResults" class="item"> Scanning... </i></div>
     <ion-list id="device-list" class="top-container">
-          <ion-item ng-repeat="value in foundDevices" class="row">
-            <div class="col col-50">
-              <h2>{{ value[value.length - 1].name }}</h2>
-              <p>UUID: {{ value[value.length - 1].address }}</p>
-              <p>RSSI: {{ value[value.length - 1].rssi }}</p>
-				      <div class="loader" style="width: {{ value[value.length - 1].rssi + 110 }}%;">
-                  <p class="percent">{{ value[value.length - 1].rssi + 110 }}%</p>
+          <ion-item ng-repeat="value in currentDevices " class="row">
+            <div id="device-param" class="col col-50">
+              <h2>{{ value.name }}</h2>
+              <!--<p>UUID: {{ value.address }}</p>-->
+              <p ng-show="showResults">RSSI: {{ value.rssi }}</p>
+				      <div ng-show="showResults" class="loader" style="width: {{ value.rssi + 110 }}%;">
+                  <p class="percent">{{ value.rssi + 110 }}%</p>
 				      </div>
             </div>
-            <div class="col col-50">
-                <p> Место для Вашей рекламы </p>
-            </div>
+            <ble-graph current-rssi={{value.rssi}} class="col col-50"></ble-graph>
+
 
           </ion-item>
     </ion-list>
