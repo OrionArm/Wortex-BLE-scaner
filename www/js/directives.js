@@ -27,7 +27,6 @@ angular
           var currentRssi = Number(value);
           var rssiData = {timeMark: Date.now(), currentRssi: currentRssi};
           deviceDB.push(rssiData);
-
           var minY = d3.min(deviceDB, function (d) {
             return d.currentRssi;
           });
